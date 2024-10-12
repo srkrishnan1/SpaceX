@@ -13,22 +13,20 @@ interface RocketCardSectionProps {
 }
 
 const RocketCardSection: React.FC<RocketCardSectionProps> = ({ data }) => {
-  const [images, setImages] = useState<React.ReactNode[]>([]);
+  const [images, setImages] = useState<JSX.Element[]>([]);
 
   useEffect(() => {
     if (data.flickr_images && data.flickr_images.length > 0) {
-      setImages(
-        data.flickr_images.map((imageUrl, index) => (
-          <img
-            key={index}
-            src={imageUrl}
-            className="rocket-card-section__image"
-            alt={`${data.name} image ${index + 1}`}
-          />
-        ))
-      );
+      const imageElements = data.flickr_images.map((imageUrl, index) => (
+        <img
+          key={index}
+          src={imageUrl}
+          className="rocket-card-section__image"
+          alt={`${data.name} image ${index + 1}`}
+        />
+      ));
+      setImages(imageElements);
     }
-    console.log(images);
   }, [data]);
 
   return (
@@ -40,9 +38,9 @@ const RocketCardSection: React.FC<RocketCardSectionProps> = ({ data }) => {
           <p className="rocket-card-section__subtitle">{data.description}</p>
         </div>
         <Button
-          style={"border"}
-          size={"md"}
-          content={"Know More"}
+          style="border"
+          size="md"
+          content="Know More"
           externalLink={data.id}
         >
           <AiOutlineArrowRight />

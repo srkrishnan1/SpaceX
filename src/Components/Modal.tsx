@@ -1,4 +1,3 @@
- 
 import React from "react";
 import { IoMdClose } from "react-icons/io";
 
@@ -25,10 +24,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, videoUrl }) => {
           height="100%"
           src={`${videoUrl}?autoplay=1`}
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
         ></iframe>
       </div>
     </div>

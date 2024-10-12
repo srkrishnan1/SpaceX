@@ -1,10 +1,6 @@
 import HeroSection from "../Components/HeroSection";
 import RocketCardSection from "../Components/RocketCardSection";
-import {
-  RocketBasicData,
-  RocketBasicQuery,
-  RocketReponse,
-} from "../Configuration/Interfaces";
+import { RocketBasicData, RocketReponse } from "../Configuration/Interfaces";
 import Image from "../assets/P6Qy9QgewcweJpsXjG2tzL.jpg";
 import useApiPost from "../hooks/useApiPost";
 import { API_URL } from "../Configuration/BasicConfiguration";
@@ -14,7 +10,7 @@ import ScrollAnimation from "../Components/Prallex";
 
 const RocketsPage = () => {
   const [data, setData] = useState<RocketBasicData[]>();
-  const payload: RocketBasicQuery = useMemo(
+  const payload = useMemo(
     () => ({
       options: {
         select: {
@@ -30,7 +26,8 @@ const RocketsPage = () => {
     }),
     []
   );
-  const heroSectionContet: ReactElement = (
+
+  const heroSectionContent: ReactElement = (
     <div className={`hero__content flex center flex-col gap-8`}>
       <h1 className="hero__title font-xl">Beyond Earth, into the future.</h1>
       <p className="hero__caption">
@@ -48,10 +45,18 @@ const RocketsPage = () => {
     if (result) setData(result.docs);
   }, [result]);
 
+  if (isLoading) {
+    return <div>Loading rockets...</div>;
+  }
+
+  if (error) {
+    return <div>Error loading rockets: {error}</div>;
+  }
+
   return (
     <div className="rockets-page">
       <ScrollAnimation animationClass="animate-fade-in" threshold={0.3}>
-        <HeroSection image={Image}>{heroSectionContet}</HeroSection>
+        <HeroSection image={Image}>{heroSectionContent}</HeroSection>
       </ScrollAnimation>
       <ScrollAnimation animationClass="animate-fade-in" threshold={0.3}>
         <SubHeroSection />

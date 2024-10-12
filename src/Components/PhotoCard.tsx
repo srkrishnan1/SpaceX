@@ -1,19 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 interface PhotoCardProps {
   title: string;
   subtitle: string;
   image: string;
-  link?: string;
 }
 
-const PhotoCard: React.FC<PhotoCardProps> = ({
-  title,
-  subtitle,
-  image,
-  link = "",
-}) => {
+const PhotoCard: React.FC<PhotoCardProps> = ({ title, subtitle, image }) => {
   return (
     <div className="photoCard">
       <img src={image} alt={title} className="photoCard__image" />

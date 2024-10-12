@@ -1,5 +1,5 @@
-import { useMemo, useState, useEffect } from "react";
-import { LaunchQueryData, LaunchResponse } from "../Configuration/Interfaces";
+import React, { useMemo, useState, useEffect } from "react";
+import { LaunchResponse } from "../Configuration/Interfaces";
 import { API_URL } from "../Configuration/BasicConfiguration";
 import useApiPost from "../hooks/useApiPost";
 import Card from "./Card";
@@ -14,24 +14,22 @@ const LaunchContent: React.FC<LaunchesProps> = ({
   upcoming,
   ITEMS_PER_PAGE,
 }) => {
-  const [pageNumber, setPageNumber] = useState<number>(0);  
-  const [data, setData] = useState<LaunchResponse | null>(null);  
+  const [pageNumber, setPageNumber] = useState<number>(0);
+  const [data, setData] = useState<LaunchResponse | null>(null);
 
-   
   useEffect(() => {
     setPageNumber(0);
     setData(null);
   }, [upcoming]);
 
-   
-  const payload: LaunchQueryData = useMemo(
+  const payload = useMemo(
     () => ({
       query: {
-        upcoming: upcoming,
+        upcoming,
       },
       options: {
         limit: ITEMS_PER_PAGE,
-        offset: pageNumber * ITEMS_PER_PAGE,  
+        offset: pageNumber * ITEMS_PER_PAGE,
         sort: {
           date_utc: "desc",
         },
@@ -54,23 +52,18 @@ const LaunchContent: React.FC<LaunchesProps> = ({
     [pageNumber, upcoming, ITEMS_PER_PAGE]
   );
 
-   
   const { result, isLoading, error } = useApiPost<LaunchResponse>(
     `${API_URL}/launches/query/`,
     payload
   );
-  console.log(result);
 
-   
   useEffect(() => {
     if (result) {
       setData((prevData) => {
-         
         if (pageNumber === 0) {
           return result;
         }
 
-         
         return {
           ...result,
           docs: [
@@ -85,10 +78,10 @@ const LaunchContent: React.FC<LaunchesProps> = ({
     }
   }, [result, pageNumber]);
 
-   
-  function handleNext(): void {
+  const handleNext = (): void => {
     if (result?.hasNextPage) setPageNumber((prev) => prev + 1);
-  }
+  };
+
   const fallbackImages: string[] = [
     "https://imgur.com/DaCfMsj.jpg",
     "https://imgur.com/azYafd8.jpg",
@@ -107,16 +100,16 @@ const LaunchContent: React.FC<LaunchesProps> = ({
   return (
     <div className="upcoming-card-section">
       <div className="upcoming-card-section__cards">
-        {data?.docs.map((e, index) => (
+        {data?.docs.map((launch) => (
           <Card
-            key={e.id}
-            title={e.name}
-            subtitle={`${formatDate(e.date_utc)}`}
+            key={launch.id}
+            title={launch.name}
+            subtitle={formatDate(launch.date_utc)}
             imageLink={
-              e.links?.flickr?.original[0] ||
-              fallbackImages[index % fallbackImages.length]
+              launch.links?.flickr?.original[0] ||
+              fallbackImages[data.docs.indexOf(launch) % fallbackImages.length]
             }
-            id={e.id}
+            id={launch.id}
           />
         ))}
       </div>
@@ -124,7 +117,8 @@ const LaunchContent: React.FC<LaunchesProps> = ({
       {result?.hasNextPage && (
         <button
           className={`button button--outline button--md group`}
-          onClick={() => handleNext()}
+          onClick={handleNext}
+          disabled={isLoading}
         >
           <span className="button__text">
             {isLoading ? "Loading..." : "Load More"}

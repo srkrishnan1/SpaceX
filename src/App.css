@@ -41,28 +41,25 @@ body {
 .pill::before {
   content: "";
   position: absolute;
-  bottom: 0;  
-  left: 0;  
-  height: 2px;  
-  width: 100%;  
-  background: white;  
-  transform: translateX(-100%);  
-  transition: transform 0.3s ease;  
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
 }
 
- 
 .pill:hover::before {
-  transform: translateX(0);  
+  transform: translateX(0);
 }
 
- 
 .pill:focus::before {
-  transform: translateX(0);  
+  transform: translateX(0);
 }
 
- 
 .pill:not(:hover):not(:focus)::before {
-  transform: translateX(-100%);  
+  transform: translateX(-100%);
 }
 
 .navBar__ul {
@@ -120,20 +117,20 @@ body {
   @apply lg:hidden cursor-pointer;
 }
 .navBar.scrolled {
-  background-color: black;  
+  background-color: black;
 }
 
 .navBar.hidden {
-  transform: translateY(-100%);  
+  transform: translateY(-100%);
 }
 @keyframes fadeOut {
   0% {
-    opacity: 0;  
-    transform: translateY(-100%);  
+    opacity: 0;
+    transform: translateY(-100%);
   }
   100% {
     opacity: 1;
-    transform: translateY();  
+    transform: translateY();
   }
 }
 .hero {
@@ -146,14 +143,14 @@ body {
 
 .hero__caption {
   display: -webkit-box;
-  -webkit-line-clamp: 3;  
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  @apply md:text-base md:font-light lg:text-lg text-center w-full text-sm font-light font-normal text-clip max-h-[35%] overflow-y-hidden;
+  @apply md:text-base md:font-light lg:text-lg text-center md:text-left w-full text-sm font-light font-normal text-clip max-h-[35%] overflow-y-hidden;
 }
 .hero__content {
-  @apply md:text-2xl lg:text-8xl font-normal text-white absolute top-1/2 -translate-y-1/2 text-center  md:ml-8 w-full lg:w-[50%] md:text-left h-full flex flex-col justify-center lg:items-start items-center;  
+  @apply md:text-2xl lg:text-8xl font-normal text-white absolute top-1/2 -translate-y-1/2 text-center  md:ml-8 w-full lg:w-[50%] md:text-left h-full flex flex-col justify-center lg:items-start items-center;
 }
 .hero__content .button__text {
   @apply font-normal text-base;
@@ -282,34 +279,34 @@ body {
 }
 
 .scrolling-text__border {
-  position: absolute;  
-  bottom: 0;  
-  left: 0;  
-  height: 2px;  
-  background: white;  
-  width: 100%;  
-  transform: translateX(-100%);  
-  animation: borderAnimation 2.8s forwards;  
-  animation-delay: 0.5s;  
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: white;
+  width: 100%;
+  transform: translateX(-100%);
+  animation: borderAnimation 2.8s forwards;
+  animation-delay: 0.5s;
 }
 
 @keyframes borderAnimation {
   0% {
-    transform: translateX(-100%);  
+    transform: translateX(-100%);
   }
   100% {
-    transform: translateX(0);  
+    transform: translateX(0);
   }
 }
 
 @keyframes fadeIn {
   0% {
-    opacity: 0;  
-    transform: translateX(-50px);  
+    opacity: 0;
+    transform: translateX(-50px);
   }
   100% {
-    opacity: 1;  
-    transform: translateX(0);  
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -470,7 +467,6 @@ body {
   @apply font-normal text-base font-light lg:text-lg;
 }
 
- 
 .rocket-detail-container {
   position: relative;
   transition: transform 1s ease-in-out;
@@ -517,11 +513,11 @@ body {
 
 .carousel {
   display: flex;
-  gap: 16px;  
+  gap: 16px;
   overflow-x: scroll;
   scroll-behavior: smooth;
-  scrollbar-width: none;  
-  -ms-overflow-style: none;  
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .launch-by .carousel {
   @apply flex-col md:flex-row;
@@ -531,7 +527,7 @@ body {
   @apply justify-center;
 }
 .carousel::-webkit-scrollbar {
-  display: none;  
+  display: none;
 }
 
 .carousel-nav {
@@ -645,7 +641,6 @@ body {
   @apply font-light;
 }
 
- 
 @keyframes fadeIn {
   from {
     opacity: 0;

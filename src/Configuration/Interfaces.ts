@@ -1,44 +1,5 @@
-export interface QueryOptions {
-  limit: number;
-  offset: number;
 
-  sort: {
-    date_utc: string;
-  };
-  select: {
-    id: number;
-    name: number;
-    date_utc: number;
-    details: number;
-  };
-  populate: Array<{
-    path: string;
-    select: {
-      original: number;
-    };
-  }>;
-}
 
-export interface LaunchQueryData {
-  query: {
-    upcoming: boolean;
-  };
-  options: QueryOptions;
-}
-
-export interface RocketBasicQuery {
-  options: {
-    select: {
-      id: number;
-      name: number;
-      description: number;
-      success_rate_pct: number;
-      active: number;
-      flickr_images: number;
-      first_flight: number;
-    };
-  };
-}
 
 export interface RocketBasicData {
   id: string;

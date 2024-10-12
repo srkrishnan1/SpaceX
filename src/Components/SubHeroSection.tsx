@@ -1,44 +1,40 @@
 import React from "react";
-import ScrollingText from "../Utilities/Scrolling";
+
 import ScrollingNumber from "../Utilities/ScrollingNumber";
 
-const SubHeroSection = () => {
-  const scrollingArray = [
-    { count: 121, label: "Total Launch" },
-    { count: 134, label: "Total Landing" },
-    { count: 110, label: "Total Reflight" },
+interface ScrollingItem {
+  count: number;
+  label: string;
+}
+const SubHeroSection: React.FC = () => {
+  const scrollingArray: ScrollingItem[] = [
+    { count: 121, label: "Total Launches" },
+    { count: 134, label: "Total Landings" },
+    { count: 110, label: "Total Reflights" },
   ];
+
   return (
     <div className="subHero">
-      <div className="subeHero__content">
+      <div className="subHero__content">
         <h2 className="subHero__title">
-          Reliabe and Safe Transport of people and payload from Earth to Space
+          Reliable and Safe Transport of People and Payload from Earth to Space
         </h2>
         <p className="subHero__subtitle">
-          Spacex Make this as reusable part of the design to make things easier
-          and resuable compact design with mission to take human to mars.
+          SpaceX makes this a reusable part of the design to make things easier
+          with a compact design and a mission to take humans to Mars.
         </p>
       </div>
 
       <div className="scrollingNumber__wrapper">
-        <ScrollingNumber
-          className="scrollingNumber"
-          targetValue={121}
-          duration={2000}
-          label="Total Launches"
-        />
-        <ScrollingNumber
-          className="scrollingNumber"
-          targetValue={134}
-          duration={2000}
-          label="Total Landing"
-        />
-        <ScrollingNumber
-          className="scrollingNumber"
-          targetValue={110}
-          duration={2000}
-          label="Total Relights"
-        />
+        {scrollingArray.map((item) => (
+          <ScrollingNumber
+            key={item.label}
+            className="scrollingNumber"
+            targetValue={item.count}
+            duration={2000}
+            label={item.label}
+          />
+        ))}
       </div>
     </div>
   );

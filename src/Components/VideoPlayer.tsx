@@ -2,10 +2,11 @@ import React from "react";
 
 interface VideoPlayerProps {
   src: string;
-  autoplay?: boolean;  
-  muted?: boolean;  
-  loop?: boolean;  
+  autoplay?: boolean;
+  muted?: boolean;
+  loop?: boolean;
   controls?: boolean;
+  className?: string;
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
@@ -14,9 +15,10 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   muted = false,
   loop = false,
   controls = false,
+  className = "",
 }) => {
   return (
-    <div className="video-player__wrapper">
+    <div className={`video-player__wrapper ${className}`}>
       <video
         src={src}
         className="video-player"
@@ -24,6 +26,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         muted={muted}
         loop={loop}
         controls={controls}
+        onError={(e) => console.error("Error loading video", e)}
       />
     </div>
   );

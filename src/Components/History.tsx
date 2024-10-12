@@ -14,7 +14,6 @@ import Image10 from "../assets/FallBack1.png";
 import HeroSection from "./HeroSection";
 import ImageCarousel from "./ImageCarousel";
 
- 
 interface HistoryRecord {
   id: string;
   title: string;
@@ -22,7 +21,7 @@ interface HistoryRecord {
   details: string;
 }
 
-const bgImages = [
+const bgImages: string[] = [
   Image1,
   Image2,
   Image3,
@@ -39,6 +38,7 @@ const getOneRecordPerYear = (records: HistoryRecord[]): HistoryRecord[] => {
   const groupedByYear: { [year: number]: HistoryRecord } = records.reduce(
     (acc, record) => {
       const year = new Date(record.event_date_utc).getFullYear();
+
       if (!acc[year]) {
         acc[year] = record;
       }
@@ -53,25 +53,23 @@ const getOneRecordPerYear = (records: HistoryRecord[]): HistoryRecord[] => {
 const HistoryRecords: React.FC = () => {
   const [historyRecords, setHistoryRecords] = useState<HistoryRecord[]>([]);
 
-   
   const { result } = useFetch<HistoryRecord[]>(`${API_URL}/history`);
 
   useEffect(() => {
-     
-    if (result && result.length > 0) {
+    if (result && Array.isArray(result) && result.length > 0) {
       const filteredRecords = getOneRecordPerYear(result);
       setHistoryRecords(filteredRecords);
-      console.log(historyRecords);
+      console.log(filteredRecords);
     }
   }, [result]);
 
   const ImageWrappers = historyRecords.map((e, index) => (
-    <HeroSection image={bgImages[index % bgImages.length]}>
-      <div className={`hero__content flex flex-col gap-8`}>
+    <HeroSection key={e.id} image={bgImages[index % bgImages.length]}>
+      <div className="hero__content flex flex-col gap-8">
         <h1 className="hero__title text-2xl md:text-4xl lg:text-6xl">
           {e.title}
         </h1>
-        <p className="hero__caption text- font-extralight">{e.details}</p>
+        <p className="hero__caption font-extralight">{e.details}</p>
       </div>
     </HeroSection>
   ));

@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
 
-const useApiPost = <T,>(url: string, payload:any, needPagination:boolean = false) => {
-  const [result, setResult] = useState<T| null>(null);
+const useApiPost = <T,>(
+  url: string,
+  payload: any = {},
+  needPagination: boolean = false
+) => {
+  const [result, setResult] = useState<T | null>(null);
   const [isLoading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>("");
 
   useEffect(() => {
+    const abortController = new AbortController();
     const fetchData = async () => {
+      setLoading(true);
       try {
         const response = await fetch(url, {
           method: "POST",
@@ -14,14 +20,14 @@ const useApiPost = <T,>(url: string, payload:any, needPagination:boolean = false
             "Content-Type": "application/json",
           },
           body: JSON.stringify(payload),
+          signal: abortController.signal,
         });
 
         const result = await response.json();
         console.log(result);
 
         if (response.ok) {
-          setResult(result)
-          
+          setResult(result);
         } else {
           throw new Error(result.errors[0]?.message || "An error occurred");
         }
@@ -37,7 +43,11 @@ const useApiPost = <T,>(url: string, payload:any, needPagination:boolean = false
     };
 
     fetchData();
-  }, [url, payload]);
+
+    return () => {
+      abortController.abort();
+    };
+  }, [url, payload, needPagination]);
 
   return { result, isLoading, error };
 };

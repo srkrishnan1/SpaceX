@@ -1,10 +1,10 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useRef } from "react";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 
 interface ScrollAnimationProps {
-  children: ReactNode;  
-  threshold?: number;  
-  animationClass?: string;  
+  children: ReactNode;
+  threshold?: number;
+  animationClass?: string;
 }
 
 const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
@@ -12,7 +12,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
   threshold = 0.1,
   animationClass = "animate-fade-in",
 }) => {
-  const { ref, isVisible } = useScrollAnimation({ threshold, animationClass });
+  const { ref, isVisible } = useScrollAnimation({ threshold });
 
   return (
     <div

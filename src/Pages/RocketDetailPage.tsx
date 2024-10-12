@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect, useMemo } from "react";
+import  { ReactElement, useState, useEffect, useMemo } from "react";
 import HeroSection from "../Components/HeroSection";
 import Image from "../assets/GOES_U_pad40_DSC_1996_desktop_16be3588d7.jpg";
 import RocketImage from "../assets/WebsiteF9Fairings_Render_Desktop 1.png";
@@ -7,12 +7,7 @@ import EngineImage from "../assets/Merlin 1.png";
 import useApiPost from "../hooks/useApiPost";
 
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
-import {
-  LaunchResponse,
-  Rocket,
-  RocketDetailReponse,
-  RocketDetailsQuery,
-} from "../Configuration/Interfaces";
+import { LaunchResponse, Rocket } from "../Configuration/Interfaces";
 import useFetch from "../hooks/useFetch";
 import { API_URL } from "../Configuration/BasicConfiguration";
 import { useParams } from "react-router-dom";
@@ -20,12 +15,11 @@ import RocketDetailSection from "../Components/RocketDetailSection";
 import PhotoCard from "../Components/PhotoCard";
 import { formatDate } from "../Utilities/formatDate";
 import CardCarousel from "../Components/CardCarousel";
-import Button from "../Utilities/Button";
 
 const RocketDetailPage = (): ReactElement => {
   const [data, setData] = useState<Rocket>();
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const { rocketId } = useParams<{ rocketId: string }>();  
+  const { rocketId } = useParams<{ rocketId: string }>();
   const [direction, setDirection] = useState<string>("");
 
   const fallbackImages: string[] = [
@@ -61,7 +55,7 @@ const RocketDetailPage = (): ReactElement => {
         },
       },
     }),
-    [rocketId]  
+    [rocketId]
   );
 
   const { result: pastLaunches } = useApiPost<LaunchResponse>(
@@ -112,7 +106,7 @@ const RocketDetailPage = (): ReactElement => {
         },
       ],
     },
-     
+
     data?.second_stage.payloads.composite_fairing.height.meters && {
       title: data?.name || "SpaceX Rocket",
       label: "Payload",
@@ -170,15 +164,14 @@ const RocketDetailPage = (): ReactElement => {
   }>;
 
   const handlePrevClick = () => {
-    setDirection("left");  
+    setDirection("left");
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? prevIndex : prevIndex - 1
     );
   };
 
-   
   const handleNextClick = () => {
-    setDirection("right");  
+    setDirection("right");
     setCurrentIndex((prevIndex) =>
       prevIndex === sections.length - 1 ? prevIndex : prevIndex + 1
     );
@@ -209,11 +202,11 @@ const RocketDetailPage = (): ReactElement => {
         <div className="rocket-infomation__vetical-navbar">
           {sections.map((e, index) => (
             <button
-              key={index}  
+              key={index}
               className={`rocket-infomation__vertical-navbar-btn capitalize ${
                 currentIndex === index ? "active" : ""
               }`}
-              onClick={() => setCurrentIndex(index)}  
+              onClick={() => setCurrentIndex(index)}
             >
               {e.label}
             </button>
