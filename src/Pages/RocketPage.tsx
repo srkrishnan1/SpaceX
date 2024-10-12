@@ -26,8 +26,7 @@ const RocketsPage = () => {
     }),
     []
   );
-
-  const heroSectionContent: ReactElement = (
+  const heroSectionContet: ReactElement = (
     <div className={`hero__content flex center flex-col gap-8`}>
       <h1 className="hero__title font-xl">Beyond Earth, into the future.</h1>
       <p className="hero__caption">
@@ -36,7 +35,7 @@ const RocketsPage = () => {
     </div>
   );
 
-  const { result, isLoading, error } = useApiPost<RocketReponse>(
+  const { result } = useApiPost<RocketReponse>(
     `${API_URL}/rockets/query/`,
     payload
   );
@@ -45,18 +44,10 @@ const RocketsPage = () => {
     if (result) setData(result.docs);
   }, [result]);
 
-  if (isLoading) {
-    return <div>Loading rockets...</div>;
-  }
-
-  if (error) {
-    return <div>Error loading rockets: {error}</div>;
-  }
-
   return (
     <div className="rockets-page">
       <ScrollAnimation animationClass="animate-fade-in" threshold={0.3}>
-        <HeroSection image={Image}>{heroSectionContent}</HeroSection>
+        <HeroSection image={Image}>{heroSectionContet}</HeroSection>
       </ScrollAnimation>
       <ScrollAnimation animationClass="animate-fade-in" threshold={0.3}>
         <SubHeroSection />

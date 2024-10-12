@@ -142,15 +142,10 @@ body {
 }
 
 .hero__caption {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  @apply md:text-base md:font-light lg:text-lg text-center md:text-left w-full text-sm font-light font-normal text-clip max-h-[35%] overflow-y-hidden;
+  @apply md:text-base lg:text-left md:font-light md:text-center lg:text-lg md:text-left w-full text-sm font-light text-gray-100 font-normal text-clip max-h-[35%] overflow-y-hidden;
 }
 .hero__content {
-  @apply md:text-2xl lg:text-8xl font-normal text-white absolute top-1/2 -translate-y-1/2 text-center  md:ml-8 w-full lg:w-[50%] md:text-left h-full flex flex-col justify-center lg:items-start items-center;
+  @apply md:text-2xl text-3xl lg:text-8xl font-normal text-white absolute top-1/2 -translate-y-1/2 text-center  md:ml-8 w-full lg:w-[50%] md:text-left h-full flex flex-col justify-center lg:items-start items-center;
 }
 .hero__content .button__text {
   @apply font-normal text-base;
@@ -455,13 +450,13 @@ body {
   @apply text-base md:text-xl lg:text-3xl;
 }
 .subHero {
-  @apply text-white  md:min-h-screen w-full py-12 md:py-24 flex flex-col gap-24 items-center justify-between;
+  @apply text-white  md:min-h-screen w-full lg:w-auto py-12 md:py-24 flex flex-col gap-24 items-center justify-between;
 }
 .subHero__title {
   @apply text-3xl lg:text-5xl font-normal;
 }
-.subeHero__content {
-  @apply flex flex-col gap-8 w-full mx-4 md:w-[70%] mx-auto text-center;
+.subHero__content {
+  @apply flex flex-col gap-8 w-full mx-4 md:w-[70%] mx-auto text-center lg:place-content-center lg:w-[50%];
 }
 .subHero__subtitle {
   @apply font-normal text-base font-light lg:text-lg;
