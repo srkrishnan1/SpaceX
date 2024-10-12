@@ -69,7 +69,9 @@ const HistoryRecords: React.FC = () => {
         <h2 className="hero__title text-2xl md:text-4xl lg:text-6xl">
           {e.title}
         </h2>
-        <p className="hero__caption font-extralight">{e.details}</p>
+        <p className="hero__caption font-extralight lg:text-left">
+          {e.details}
+        </p>
       </div>
     </HeroSection>
   ));

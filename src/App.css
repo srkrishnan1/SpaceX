@@ -142,10 +142,10 @@ body {
 }
 
 .hero__caption {
-  @apply md:text-base lg:text-left md:font-light md:text-center lg:text-lg md:text-left w-full text-sm font-light text-gray-100 font-normal text-clip max-h-[35%] overflow-y-hidden;
+  @apply md:text-base text-center md:font-light md:text-center lg:text-lg md:text-left w-full text-sm font-light text-gray-100 font-normal text-clip max-h-[35%] overflow-y-hidden;
 }
 .hero__content {
-  @apply md:text-2xl text-3xl lg:text-8xl font-normal text-white absolute top-1/2 -translate-y-1/2 text-center  md:ml-8 w-full lg:w-[50%] md:text-left h-full flex flex-col justify-center lg:items-start items-center;
+  @apply md:text-2xl text-left text-3xl lg:text-8xl font-normal text-white absolute top-1/2 -translate-y-1/2 text-center  md:ml-8 w-full lg:w-[50%] md:text-left h-full flex flex-col justify-center lg:items-start items-center;
 }
 .hero__content .button__text {
   @apply font-normal text-base;

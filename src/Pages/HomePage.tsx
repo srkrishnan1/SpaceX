@@ -16,7 +16,7 @@ const HomePage = () => {
   const heroSectionContet: ReactElement = (
     <div className={`hero__content flex flex-col gap-8`}>
       <h1 className="hero__title">Making Life Multiplanitary</h1>
-      <p className="hero__caption">
+      <p className="hero__caption lg:text-left">
         In 2020, SpaceX returned America’s ability to fly NASA astronauts to and
         from the International Space Station on American vehicles for the first
         time since 2011. In addition to flying astronauts to space for NASA,
