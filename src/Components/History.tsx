@@ -1,6 +1,11 @@
+//This component will take history record and construct the carousel
+
 import { useState, useEffect } from "react";
+//Custom useFetch to fetch data
 import useFetch from "../hooks/useFetch";
+//SpaceX api url
 import { API_URL } from "../Configuration/BasicConfiguration";
+//Fallback images
 import Image1 from "../assets/mission-slider-08.jpg";
 import Image2 from "../assets/mission-slider-05.jpg";
 import Image3 from "../assets/mission-slider-01.jpg";
@@ -59,7 +64,7 @@ const HistoryRecords: React.FC = () => {
     if (result && Array.isArray(result) && result.length > 0) {
       const filteredRecords = getOneRecordPerYear(result);
       setHistoryRecords(filteredRecords);
-      console.log(filteredRecords);
+    
     }
   }, [result]);
 

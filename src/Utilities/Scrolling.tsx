@@ -1,3 +1,4 @@
+//Scrolling number animation
 interface ScrollingTextProps {
   items: { count: number; label: string }[];
 }

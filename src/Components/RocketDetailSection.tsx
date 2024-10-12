@@ -1,3 +1,4 @@
+//It displays the detailed infomation about rocket
 import React from "react";
 
 interface ListItem {

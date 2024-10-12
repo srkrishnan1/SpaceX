@@ -1,3 +1,4 @@
+//custom hook to fetch the data from api
 import { useEffect, useState } from "react";
 
 const useFetch = <T,>(url: string) => {

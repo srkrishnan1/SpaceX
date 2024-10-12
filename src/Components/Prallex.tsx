@@ -1,3 +1,4 @@
+//Used for scrolling animation
 import React, { ReactNode } from "react";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 

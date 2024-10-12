@@ -1,3 +1,4 @@
+//A modal is an overlay that presents focused content or actions without navigating away from the current page.
 import React from "react";
 import { IoMdClose } from "react-icons/io";
 
@@ -10,7 +11,7 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, videoUrl }) => {
   if (!isOpen) return null;
 
-  console.log(videoUrl);
+
 
   return (
     <div className="modal-overlay">

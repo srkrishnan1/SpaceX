@@ -1,10 +1,19 @@
-import HeroSection from "../Components/HeroSection";
-import RocketCardSection from "../Components/RocketCardSection";
+//List what are the different types of rocket available by spacex
+
+import { ReactElement, useEffect, useMemo, useState } from "react";
+
+//interface
 import { RocketBasicData, RocketReponse } from "../Configuration/Interfaces";
-import Image from "../assets/P6Qy9QgewcweJpsXjG2tzL.jpg";
+
+//custom hook
 import useApiPost from "../hooks/useApiPost";
 import { API_URL } from "../Configuration/BasicConfiguration";
-import { ReactElement, useEffect, useMemo, useState } from "react";
+
+//Image
+import Image from "../assets/P6Qy9QgewcweJpsXjG2tzL.jpg";
+
+import HeroSection from "../Components/HeroSection";
+import RocketCardSection from "../Components/RocketCardSection";
 import SubHeroSection from "../Components/SubHeroSection";
 import ScrollAnimation from "../Components/Prallex";
 

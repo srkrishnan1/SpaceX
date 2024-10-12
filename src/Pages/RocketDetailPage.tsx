@@ -1,20 +1,31 @@
+//Return detailed information about the particular rocket
+
 import { ReactElement, useState, useEffect, useMemo } from "react";
-import HeroSection from "../Components/HeroSection";
+
+//Images
 import Image from "../assets/GOES_U_pad40_DSC_1996_desktop_16be3588d7.jpg";
 import RocketImage from "../assets/WebsiteF9Fairings_Render_Desktop 1.png";
 import payloadImage from "../assets/payload 1.png";
 import EngineImage from "../assets/Merlin 1.png";
-import useApiPost from "../hooks/useApiPost";
 
+//custom hooks
+import useApiPost from "../hooks/useApiPost";
+import useFetch from "../hooks/useFetch";
+
+//React icons
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
 import { LaunchResponse, Rocket } from "../Configuration/Interfaces";
-import useFetch from "../hooks/useFetch";
+
 import { API_URL } from "../Configuration/BasicConfiguration";
+
 import { useParams } from "react-router-dom";
+
+//Components
 import RocketDetailSection from "../Components/RocketDetailSection";
 import PhotoCard from "../Components/PhotoCard";
 import { formatDate } from "../Utilities/formatDate";
 import CardCarousel from "../Components/CardCarousel";
+import HeroSection from "../Components/HeroSection";
 
 const RocketDetailPage = (): ReactElement => {
   const [data, setData] = useState<Rocket>();
@@ -73,7 +84,7 @@ const RocketDetailPage = (): ReactElement => {
       e.links.flickr.original[0] ||
       fallbackImages[Math.floor(Math.random() * fallbackImages.length)],
   }));
-  console.log(result);
+ 
 
   const sections = [
     {

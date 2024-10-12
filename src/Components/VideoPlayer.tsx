@@ -1,3 +1,5 @@
+//Wrapper fro video player
+
 import React from "react";
 
 interface VideoPlayerProps {

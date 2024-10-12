@@ -1,3 +1,4 @@
+//Custom button component which have two differnt style border and outline
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
 

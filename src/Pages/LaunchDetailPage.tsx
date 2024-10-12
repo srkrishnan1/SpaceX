@@ -1,16 +1,25 @@
+//Launch Detail page consits of detail about the particular launch
+
 import React, { useState } from "react";
+
 import { useParams } from "react-router-dom";
 import { API_URL } from "../Configuration/BasicConfiguration";
+import { SPACEX_URL } from "../Configuration/BasicConfiguration";
 import { LaunchData } from "../Configuration/Interfaces";
+
+//Custom components or methods
 import useFetch from "../hooks/useFetch";
+import Button from "../Utilities/Button";
 import Modal from "../Components/Modal";
-import { IoPlayCircleOutline } from "react-icons/io5";
-import fallbackImage from "../assets/mission-slider-04.jpg";
 import HeroSection from "../Components/HeroSection";
 import { formatDate } from "../Utilities/formatDate";
-import Button from "../Utilities/Button";
-import { SPACEX_URL } from "../Configuration/BasicConfiguration";
+
+//Fallback image
+import fallbackImage from "../assets/mission-slider-04.jpg";
+
+//React icons
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { IoPlayCircleOutline } from "react-icons/io5";
 
 const LaunchDetailPage: React.FC = () => {
   const fallBackUrl: string = "https://www.youtube.com/watch?v=0a_00nJ_Y88";
@@ -26,8 +35,6 @@ const LaunchDetailPage: React.FC = () => {
     const match = url.match(regex);
     return match ? match[1] : "";
   };
-
-
 
   const handlePlayClick = (): void => {
     setIsModalOpen(true);

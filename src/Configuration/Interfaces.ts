@@ -1,4 +1,4 @@
-
+//Collection of necessay interfaces
 
 
 export interface RocketBasicData {

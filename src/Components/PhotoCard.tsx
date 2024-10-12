@@ -1,3 +1,5 @@
+//Photo card is small size card used to show image with title and subtitle
+
 import React from "react";
 
 interface PhotoCardProps {

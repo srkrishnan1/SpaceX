@@ -1,3 +1,5 @@
+//Return the launch data based on given props
+
 import React, { useMemo, useState, useEffect } from "react";
 import { LaunchResponse } from "../Configuration/Interfaces";
 import { API_URL } from "../Configuration/BasicConfiguration";

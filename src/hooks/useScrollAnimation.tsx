@@ -1,3 +1,5 @@
+//Modify the element to have scroll animation
+
 import { useEffect, useRef, useState } from "react";
 
 interface UseScrollAnimationProps {

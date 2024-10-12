@@ -1,5 +1,8 @@
+//This element take image, title, subtitle, link as props and construct the image wrapper with background as image provided and content on foreground.
 
+//React icon
 import { AiOutlineArrowRight } from "react-icons/ai";
+//Custom Button element
 import Button from "../Utilities/Button";
 
 interface ImageWrapperProps {

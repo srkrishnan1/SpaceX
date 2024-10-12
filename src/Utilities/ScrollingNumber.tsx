@@ -1,3 +1,4 @@
+//Scrolling number animation
 import React, { useState, useEffect, useRef } from "react";
 
 interface ScrollingNumberProps {
@@ -19,7 +20,6 @@ const ScrollingNumber: React.FC<ScrollingNumberProps> = ({
   const animationFrameId = useRef<number | null>(null);
 
   useEffect(() => {
-     
     const animationStartTime = Date.now();
     const totalDuration = duration;
 
@@ -39,7 +39,6 @@ const ScrollingNumber: React.FC<ScrollingNumberProps> = ({
 
     animationFrameId.current = requestAnimationFrame(animate);
 
-     
     return () => {
       if (animationFrameId.current !== null) {
         cancelAnimationFrame(animationFrameId.current);

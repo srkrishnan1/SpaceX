@@ -1,3 +1,5 @@
+//used to convert date in utc format to DD-MM-YYYY
+
 export const formatDate = (dateString: string | null | undefined): string => {
   if (!dateString) {
     return "Invalid date";

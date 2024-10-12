@@ -1,4 +1,7 @@
+//Take images as props and construct the carousel having two navigation button for forward and backward.
+
 import { useState } from "react";
+//React icons
 import { MdChevronRight } from "react-icons/md";
 import { MdChevronLeft } from "react-icons/md";
 import { GoDotFill } from "react-icons/go";

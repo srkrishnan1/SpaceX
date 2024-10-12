@@ -1,3 +1,6 @@
+//Nav button is used in image carousel to navigate between elements
+
+//React icons
 import { MdChevronRight } from "react-icons/md";
 import { MdChevronLeft } from "react-icons/md";
 

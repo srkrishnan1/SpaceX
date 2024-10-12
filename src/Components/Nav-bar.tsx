@@ -1,7 +1,10 @@
+// Main nav bar have logo and right content
+
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../Utilities/Logo";
 import Pills from "../Utilities/Pills";
-import { useState, useEffect } from "react";
+//React icons
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -43,6 +46,7 @@ const Navbar: React.FC = () => {
 
   const toggleModal = (): void => {
     setIsModalOpen((prev) => !prev);
+    
   };
 
   return (
@@ -95,12 +99,14 @@ const Navbar: React.FC = () => {
                 content={"LAUNCH"}
                 underline={false}
                 link={"/launch"}
+                onClick={toggleModal}
               />
               <Pills
                 size={"md"}
                 content={"ROCKETS"}
                 underline={false}
                 link={"rockets"}
+                onClick={toggleModal}
               />
             </div>
           </div>

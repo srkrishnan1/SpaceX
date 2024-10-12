@@ -1,3 +1,4 @@
+//Home page
 import { ReactElement } from "react";
 import HeroSection from "../Components/HeroSection";
 import History from "../Components/History";
@@ -6,11 +7,14 @@ import Button from "../Utilities/Button";
 import Image from "../assets/dragon_humans 1.png";
 import video from "../assets/mission_reusability.mp4";
 import advanceHuman from "../assets/Eva_Suit_Desktop_alternate_1cf9bae18e.jpg";
-import { AiOutlineArrowRight } from "react-icons/ai";
+
 import VideoPlayer from "../Components/VideoPlayer";
 
 import ScrollAnimation from "../Components/Prallex";
 import UpcomingLaunch from "../Components/UpcomingLaunch";
+
+//React icons
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 const HomePage = () => {
   const heroSectionContet: ReactElement = (

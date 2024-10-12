@@ -1,10 +1,17 @@
+//Give the list of past launch events
+
+import { useMemo, ReactElement } from "react";
+
+//Custom component
 import HeroSection from "../Components/HeroSection";
 import LaunchContent from "../Components/UpcomingLaunches";
 
 import ScrollingText from "../Utilities/Scrolling";
-import { useMemo, ReactElement } from "react";
-import heroImage from "../assets/dragon_feature.jpg";
 import ScrollAnimation from "../Components/Prallex";
+
+
+import heroImage from "../assets/dragon_feature.jpg";
+
 
 const Launches: React.FC = () => {
   const scrolldata = useMemo<{ count: number; label: string }[]>(

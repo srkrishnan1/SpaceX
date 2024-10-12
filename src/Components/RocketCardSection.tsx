@@ -1,7 +1,10 @@
+//It display the overview of every rocket
+
 import React, { useEffect, useState } from "react";
 import { RocketBasicData } from "../Configuration/Interfaces";
 import ImageCarousel from "./ImageCarousel";
 import Button from "../Utilities/Button";
+//React icons
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 interface RocketCardSectionProps {

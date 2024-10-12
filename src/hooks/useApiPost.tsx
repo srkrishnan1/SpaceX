@@ -1,3 +1,4 @@
+//Custom hook to get data in case of graphql, or post data.
 import { useEffect, useState } from "react";
 
 const useApiPost = <T,>(
@@ -24,7 +25,7 @@ const useApiPost = <T,>(
         });
 
         const result = await response.json();
-        console.log(result);
+      
 
         if (response.ok) {
           setResult(result);

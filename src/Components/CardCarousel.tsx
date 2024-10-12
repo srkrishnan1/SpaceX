@@ -1,3 +1,5 @@
+//Utilized to create a carousel that consists of cards, with navigation buttons for moving back and forth.
+
 import React, { useRef } from "react";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
 

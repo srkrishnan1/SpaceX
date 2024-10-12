@@ -1,3 +1,5 @@
+//Footer for the whole website
+
 const Footer = () => {
   return (
     <footer className="footer">

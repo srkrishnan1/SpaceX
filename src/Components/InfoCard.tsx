@@ -1,3 +1,5 @@
+//Info card used to build small imagre wrapper card
+
 import React, { ReactElement } from "react";
 
 interface InfoCardProps {

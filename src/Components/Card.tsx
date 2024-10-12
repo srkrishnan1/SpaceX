@@ -1,3 +1,5 @@
+//Create a simple card featuring an image as the background, with the title and subtitle displayed prominently in the foreground.
+
 import React from "react";
 import Button from "../Utilities/Button";
 

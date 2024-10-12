@@ -10,8 +10,6 @@ import LaunchDetailPage from "./Pages/LaunchDetailPage";
 import AdvanceHumanFlight from "./Pages/AdvanceHumanFlight";
 
 function App() {
-  console.log("Inside the app");
-
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

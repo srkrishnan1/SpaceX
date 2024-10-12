@@ -1,3 +1,4 @@
+//It is same as hero section but used as secondary hero element
 import React from "react";
 
 import ScrollingNumber from "../Utilities/ScrollingNumber";
