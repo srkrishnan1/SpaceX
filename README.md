@@ -25,7 +25,7 @@ This project is a web application designed to display SpaceX launches and rocket
 The application follows a modular, component-based architecture, leveraging React for state management and rendering. It makes extensive use of custom hooks to handle side effects and data fetching.
 
 ## Key components
-
+- Custom Hooks: Created custom hooks to fetch data, and also another hook to post data in case of graphql query.
 - ImageCarousel: Displays SpaceX launch cards in a carousel format with navigation buttons for switching between slides.
 - RocketCardSection: Renders SpaceX rocket data fetched from the API in individual card layouts.
 - ScrollAnimation: A custom hook that adds animations to elements as they come into the viewport while scrolling.
@@ -46,14 +46,14 @@ The application follows a modular, component-based architecture, leveraging Reac
 - Best Practices: 79% – While mostly aligned with modern web best practices, minor improvements could be made, including ensuring all external resources are loaded securely.
 - Performance: 54% – The app performs decently on modern devices, though image optimizations and code-splitting can improve this further.
 
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
+![alt text](readmeResources/image-1.png)
+![alt text](readmeResources/image-2.png)
+![alt text](readmeResources/image-3.png)
 
 # Areas of improvement
+
 ## Performance Optimisation:
+
 - From the light house report it is clearly stated that the website takes long time to load because of high use of images and animation. To reduce the loading time compress images and ensure correct sizing for faster load times.
 - Lazy-load components and routes to reduce initial bundle size and improve load speed.
 - And also choose better API provider, because the current api doesn't provide suffcient data.
-
-
