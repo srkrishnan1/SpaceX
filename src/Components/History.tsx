@@ -66,9 +66,9 @@ const HistoryRecords: React.FC = () => {
   const ImageWrappers = historyRecords.map((e, index) => (
     <HeroSection key={e.id} image={bgImages[index % bgImages.length]}>
       <div className="hero__content flex flex-col gap-8">
-        <h1 className="hero__title text-2xl md:text-4xl lg:text-6xl">
+        <h2 className="hero__title text-2xl md:text-4xl lg:text-6xl">
           {e.title}
-        </h1>
+        </h2>
         <p className="hero__caption font-extralight">{e.details}</p>
       </div>
     </HeroSection>

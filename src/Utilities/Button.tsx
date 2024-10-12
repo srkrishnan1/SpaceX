@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   externalLink,
 }) => {
   return (
-    <Link to={externalLink}>
+    <Link to={externalLink} aria-label={content}>
       <button className={`button button--${style} button--${size} group`}>
         <span className="button__text">{content}</span>
         <span className="button__fill__wrapper"></span>

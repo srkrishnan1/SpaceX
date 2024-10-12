@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from "react";
-import InfoCard from "./InfoCard";
-import { LiaSpaceShuttleSolid } from "react-icons/lia";
-import { IoCheckmarkSharp } from "react-icons/io5";
-import { GoDotFill } from "react-icons/go";
 import { RocketBasicData } from "../Configuration/Interfaces";
 import ImageCarousel from "./ImageCarousel";
 import Button from "../Utilities/Button";

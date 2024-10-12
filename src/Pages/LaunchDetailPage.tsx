@@ -27,7 +27,7 @@ const LaunchDetailPage: React.FC = () => {
     return match ? match[1] : "";
   };
 
-  const videoId: string = extractVideoId(videoUrl);
+
 
   const handlePlayClick = (): void => {
     setIsModalOpen(true);

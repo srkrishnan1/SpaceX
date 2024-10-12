@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef } from "react";
+import React, { ReactNode } from "react";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 
 interface ScrollAnimationProps {

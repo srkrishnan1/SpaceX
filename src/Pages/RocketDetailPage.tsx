@@ -1,4 +1,4 @@
-import  { ReactElement, useState, useEffect, useMemo } from "react";
+import { ReactElement, useState, useEffect, useMemo } from "react";
 import HeroSection from "../Components/HeroSection";
 import Image from "../assets/GOES_U_pad40_DSC_1996_desktop_16be3588d7.jpg";
 import RocketImage from "../assets/WebsiteF9Fairings_Render_Desktop 1.png";
@@ -37,9 +37,7 @@ const RocketDetailPage = (): ReactElement => {
     "https://farm5.staticflickr.com/4711/40126461411_aabc643fd8_b.jpg",
   ];
 
-  const { result, isLoading, error } = useFetch<Rocket>(
-    `${API_URL}/rockets/${rocketId}`
-  );
+  const { result } = useFetch<Rocket>(`${API_URL}/rockets/${rocketId}`);
 
   const payload = useMemo(
     () => ({
@@ -164,6 +162,7 @@ const RocketDetailPage = (): ReactElement => {
   }>;
 
   const handlePrevClick = () => {
+    direction;
     setDirection("left");
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? prevIndex : prevIndex - 1

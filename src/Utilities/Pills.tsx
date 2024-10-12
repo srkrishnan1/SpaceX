@@ -6,7 +6,6 @@ interface PillProps {
   content: string;
   underline: boolean;
   link: string;
-  
 }
 
 const Pills: React.FC<PillProps> = ({
@@ -19,7 +18,9 @@ const Pills: React.FC<PillProps> = ({
     <button
       className={`pill ${underline ? "pill--underline" : ""} pill--${size}`}
     >
-      <Link to={link}>{content}</Link>
+      <Link to={link} aria-label={content}>
+        {content}
+      </Link>
     </button>
   );
 };

@@ -193,7 +193,7 @@ export interface RocketDetailsQuery {
   };
 }
 
-interface Links {
+export interface Links {
   article: string | null;  
   flickr: {
     small: string[];  

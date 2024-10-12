@@ -2,7 +2,6 @@ import { ReactElement } from "react";
 import HeroSection from "../Components/HeroSection";
 import History from "../Components/History";
 
-
 import Button from "../Utilities/Button";
 import Image from "../assets/dragon_humans 1.png";
 import video from "../assets/mission_reusability.mp4";
@@ -36,7 +35,7 @@ const HomePage = () => {
   );
   const advanceHumanSection: ReactElement = (
     <div className={`hero__content flex flex-col gap-8`}>
-      <h1 className="hero__title">ADVANCE HUMAN SPACEFLIGHT</h1>
+      <h3 className="hero__title">ADVANCE HUMAN SPACEFLIGHT</h3>
 
       <Button
         style={"border"}
