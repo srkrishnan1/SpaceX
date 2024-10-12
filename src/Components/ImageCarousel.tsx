@@ -48,8 +48,10 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
         <MdChevronLeft className="imageCarousel__navBtn" onClick={handlePrev} />
         {showPagination && (
           <div className="imageCarouse__pagination-dots">
-            {data.map((e,index) => (
-              <GoDotFill className={`${currentIndex==index ? "active":""}`}/>
+            {data.map((_, index) => (
+              <GoDotFill
+                className={`${currentIndex == index ? "active" : ""}`}
+              />
             ))}
           </div>
         )}

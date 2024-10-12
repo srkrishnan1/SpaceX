@@ -2,15 +2,15 @@ import { MdChevronRight } from "react-icons/md";
 import { MdChevronLeft } from "react-icons/md";
 
 interface NavBtnProps {
-  showPagination: boolean;
-  totalPages: number;
+
+
   onLeftClick: (index: number) => void;
   onRightClick: (index: number) => void;
 }
 
 const NavButtons: React.FC<NavBtnProps> = ({
-  totalPages,
-  showPagination = false,
+
+  
   onLeftClick,
   onRightClick,
 }) => {
