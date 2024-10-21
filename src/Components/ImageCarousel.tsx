@@ -44,7 +44,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
             </div>
           ))
         ) : (
-          <div>No launches available.</div>
+          <div>No data available.</div>
         )}
       </div>
       <div className="imageCarousel__pagination">

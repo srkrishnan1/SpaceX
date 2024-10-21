@@ -8,7 +8,7 @@ const Footer = () => {
 
         <li className="footer__item">
           <a href="https://shop.spacex.com/" target="__blank">
-            STORE{" "}
+            STORE
           </a>
         </li>
 

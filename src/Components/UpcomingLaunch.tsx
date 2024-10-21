@@ -1,11 +1,15 @@
 //Give the next launch event
 import React, { ReactElement, useEffect, useMemo, useState } from "react";
+
 import { Launch, LaunchResponse } from "../Configuration/Interfaces";
+
 import { API_URL } from "../Configuration/BasicConfiguration";
 import useApiPost from "../hooks/useApiPost";
 import HeroSection from "./HeroSection";
 import Button from "../Utilities/Button";
+
 import { AiOutlineArrowRight } from "react-icons/ai";
+
 //Fallback image
 import fallbackImage from "../assets/Flight_5_Website_Desktop_1_12e2f537a0.jpg";
 

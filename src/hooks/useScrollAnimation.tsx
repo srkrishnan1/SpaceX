@@ -8,12 +8,12 @@ interface UseScrollAnimationProps {
 
 const useScrollAnimation = ({ threshold = 0.1 }: UseScrollAnimationProps) => {
   const ref = useRef<HTMLDivElement | null>(null); 
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  const handleScroll = () => {
+  const handleScroll = ():void => {
     if (ref.current) {
       const { top } = ref.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
+      const windowHeight:number = window.innerHeight;
       if (top < windowHeight * threshold) {
         setIsVisible(true);
         window.removeEventListener("scroll", handleScroll); 

@@ -7,6 +7,7 @@ import Pills from "../Utilities/Pills";
 //React icons
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
+import { throttle } from "../Utilities/throttle";
 
 const Navbar: React.FC = () => {
   const [scrollY, setScrollY] = useState<number>(0);
@@ -33,20 +34,20 @@ const Navbar: React.FC = () => {
         setIsScrolled(false);
       }
 
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      lastScrollTop = currentScroll;
       setScrollY(currentScroll);
     };
+    const throttleScroll = throttle(handleScroll, 100);
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", throttleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", throttleScroll);
     };
   }, []);
 
   const toggleModal = (): void => {
     setIsModalOpen((prev) => !prev);
-    
   };
 
   return (
@@ -70,7 +71,7 @@ const Navbar: React.FC = () => {
                   size={"md"}
                   content={"LAUNCH"}
                   underline={false}
-                  link={"/launch"}
+                  link={"launch"}
                 />
                 <Pills
                   size={"md"}
@@ -98,7 +99,7 @@ const Navbar: React.FC = () => {
                 size={"md"}
                 content={"LAUNCH"}
                 underline={false}
-                link={"/launch"}
+                link={"launch"}
                 onClick={toggleModal}
               />
               <Pills

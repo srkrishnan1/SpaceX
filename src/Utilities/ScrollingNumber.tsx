@@ -23,10 +23,10 @@ const ScrollingNumber: React.FC<ScrollingNumberProps> = ({
     const animationStartTime = Date.now();
     const totalDuration = duration;
 
-    const animate = () => {
-      const elapsedTime = Date.now() - animationStartTime;
-      const progress = Math.min(elapsedTime / totalDuration, 1);
-      const newValue = Math.floor(progress * targetValue);
+    const animate = (): void => {
+      const elapsedTime: number = Date.now() - animationStartTime;
+      const progress: number = Math.min(elapsedTime / totalDuration, 1);
+      const newValue: number = Math.floor(progress * targetValue);
 
       setCurrentValue(newValue);
 

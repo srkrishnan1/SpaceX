@@ -1,12 +1,11 @@
 import React from "react";
 
-
 interface PillProps {
   size: string;
   content: string;
   underline: boolean;
   link: string;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void; // Specify HTMLButtonElement
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Pills: React.FC<PillProps> = ({
@@ -18,16 +17,16 @@ const Pills: React.FC<PillProps> = ({
 }) => {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) {
-      onClick(e); 
+      onClick(e);
     }
-    // Handle navigation
-    window.location.href = link; // Navigate to the link
+
+    window.location.href = window.location.origin + `/${link}`;
   };
 
   return (
     <button
       className={`pill ${underline ? "pill--underline" : ""} pill--${size}`}
-      onClick={handleClick} // Use the handleClick function
+      onClick={handleClick}
       aria-label={content}
     >
       {content}

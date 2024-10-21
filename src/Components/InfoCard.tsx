@@ -1,4 +1,4 @@
-//Info card used to build small imagre wrapper card
+//Info card used to build small image wrapper card
 
 import React, { ReactElement } from "react";
 

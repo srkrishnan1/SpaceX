@@ -9,9 +9,9 @@ interface ScrollingItem {
 }
 const SubHeroSection: React.FC = () => {
   const scrollingArray: ScrollingItem[] = [
-    { count: 121, label: "Total Launches" },
-    { count: 134, label: "Total Landings" },
-    { count: 110, label: "Total Reflights" },
+    { count: 48, label: "Total Launches" },
+    { count: 42, label: "Visit to ISS" },
+    { count: 27, label: "Total Reflights" },
   ];
 
   return (
