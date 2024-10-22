@@ -16,7 +16,7 @@ import UpcomingLaunch from "../Components/UpcomingLaunch";
 //React icons
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-const HomePage = () => {
+const HomePage:React.FC = () => {
   const heroSectionContet: ReactElement = (
     <div className={`hero__content flex flex-col gap-8`}>
       <h1 className="hero__title">Making Life Multiplanitary</h1>

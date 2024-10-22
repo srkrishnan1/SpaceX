@@ -1,11 +1,11 @@
 // Hero section is used create main hero element, which take image and children as props, the children should be valid react element.
 
-import React, { ReactElement } from "react";
+import React, { ReactNode } from "react";
 
 interface HeroSectionProps {
   image: string;
   
-  children: ReactElement | null;
+  children: ReactNode | null;
  
 }
 

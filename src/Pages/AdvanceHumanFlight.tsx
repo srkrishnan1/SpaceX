@@ -1,7 +1,7 @@
 
 import image from "../assets/Eva_Suit_Desktop_alternate_1cf9bae18e.jpg";
 
-const AdvanceHumanFlight = () => {
+const AdvanceHumanFlight:React.FC = () => {
   return (
     <main className="advanceHuman">
       <section className="advanceHuman__container">

@@ -1,5 +1,5 @@
 //Custom button component which have two differnt style border and outline
-import { ReactElement } from "react";
+import {  ReactNode } from "react";
 import { Link } from "react-router-dom";
 
 interface ButtonProps {
@@ -7,7 +7,7 @@ interface ButtonProps {
   size: string;
   externalLink: string;
   content: string;
-  children?: ReactElement;
+  children?: ReactNode;
 }
 
 const Button: React.FC<ButtonProps> = ({
